@@ -1,0 +1,46 @@
+.input-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.label-input{
+    margin-right: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Roboto';
+}
+
+.input {
+    border-radius: 2px;
+    margin-right: 10px;
+    border: 1px solid #758283;
+}
+
+/* .multi-select-input-container {
+    margin-top: 10px;
+} */
+
+.dropdown-input {
+    border-radius: 2px;
+    border: 1px solid #758283;
+    font-size: 13px;
+}
+
+.btns-container {
+    margin-top: 10px;
+}
+
+.btn {
+    font-size: 13px;
+    font-family: 'Roboto';
+    padding: 2px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    background-color: #3944F7;
+    color: #ffffff;
+}

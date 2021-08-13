@@ -1,0 +1,38 @@
+.table {
+    margin: 10px;
+    border-radius: 5px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.editable-table {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cell {
+    border:none;
+    text-align: center;
+    width: 100%;
+}
+
+.btn-container-edit {
+    margin-bottom: 10px;
+}
+
+.btn {
+    font-size: 13px;
+    font-family: 'Roboto';
+    padding: 2px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    background-color: #3944F7;
+    color: #ffffff;
+}
