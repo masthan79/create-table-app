@@ -26,12 +26,17 @@ class TableView extends Component {
     }
 
     renderTableHeaders = () => {
-        const {tableData} = this.state;
+        // let header_arr = [];
+        const columnsData = JSON.parse(localStorage.getItem("columnsData"))
+        let header_arr = columnsData.map(eachData => {
+            // header_arr.push(eachData.columnName)
+            return eachData.columnName
+        })
 
-        const headers = Object.keys(tableData[0]);
+        // const headers = Object.keys(tableData[0]);
         return (
             <tr>
-                {headers.map(head => <th>{head}</th>)}
+                {header_arr.map(head => <th>{head}</th>)}
             </tr>
         );
     }

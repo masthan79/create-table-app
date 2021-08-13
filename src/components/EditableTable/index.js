@@ -33,11 +33,11 @@ class EditableTable extends Component {
         isTableDataSet: false
     }
 
-    handleChange = (index, dataType, value) => {
+    handleChange = (index, cellName, value) => {
 
         const newState = this.state.tableData.map((eachItem, i) => {
             if (i === index) {
-                return {...eachItem, [dataType]: value};
+                return {...eachItem, [cellName]: value};
             }
             return eachItem;
         });
@@ -84,7 +84,7 @@ class EditableTable extends Component {
                                 className = "cell"
                                 type={eachName.columnType} 
                                 onClick = {this.onClickCell}
-                                onChange={e => this.handleChange(index, eachName.columnName, e.target.value)}
+                                onChange={e => this.handleChange(index, eachName.columnName, e.target.value, eachName.columnType)}
                                 />
                                 </td>
                             ))}
