@@ -61,7 +61,7 @@ class ColumnCreation extends Component {
         localStorage.setItem("columnsData", JSON.stringify(this.state.fromData));
         return (
             <>
-                <form onSubmit = {this.handleSubmit}>
+                <form onSubmit = {this.handleSubmit} className="form-container">
                     {
                         fromData.map((element, index) => (
                             <div key={index} className="input-container">
