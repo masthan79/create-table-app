@@ -5,8 +5,6 @@ const App = () => (
     <div className="bg-container">  
         <div className="main-container">
             <ColumnCreation/>
-            {/* <EditableTable/> */}
-            {/* <TableView/> */}
         </div>
     </div>
 )

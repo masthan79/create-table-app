@@ -87,7 +87,7 @@ class EditableTable extends Component {
                                 <td>
                                 <input 
                                 className = "cell"
-                                type="text" 
+                                type={eachName.columnType} 
                                 onClick = {this.onClickCell}
                                 onChange={e => this.handleChange(index, eachName.columnName, e.target.value)}
                                 />
