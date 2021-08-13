@@ -34,6 +34,7 @@ class EditableTable extends Component {
     }
 
     handleChange = (index, dataType, value) => {
+
         const newState = this.state.tableData.map((eachItem, i) => {
             if (i === index) {
                 return {...eachItem, [dataType]: value};
@@ -45,16 +46,10 @@ class EditableTable extends Component {
     }
 
     onClickCell = () => {
-        // console.log("clicked cell");
         this.setState({isTableDataSet: false })
     }
 
-    // dataValidation = () => {
-        
-    // }
-
     onClickSubmitTable = () => {
-        // this.dataValidation()
         localStorage.setItem("tableData", JSON.stringify(this.state.tableData));
         this.setState({isTableDataSet: true})
     }

@@ -23,8 +23,10 @@ class ColumnCreation extends Component {
 
     onClickAddColumn = () => {
         this.setState(({
+            // isEditableTable: false,
             fromData: [...this.state.fromData, {columnName: "", columnType: "date", multiSelectValue: []}]
         }))
+        // localStorage.setItem("columnsData", JSON.stringify(this.state.fromData));
     }
 
     onChangeField = (i, event, field) => {
@@ -56,6 +58,7 @@ class ColumnCreation extends Component {
 
     render(){
         const {fromData} = this.state
+        localStorage.setItem("columnsData", JSON.stringify(this.state.fromData));
         return (
             <>
                 <form onSubmit = {this.handleSubmit}>
