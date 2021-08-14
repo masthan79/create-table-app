@@ -56,14 +56,8 @@ class EditableTable extends Component {
 
     onClickAddRow = () => {
         this.setState(
-            {
-                tableData : [...this.state.tableData, obj]
-            }
+            {tableData : [...this.state.tableData, obj]}
         )
-    }
-
-    onClickMultiSelect = (eachValue) => {
-        console.log(eachValue);
     }
 
     render(){
@@ -85,7 +79,7 @@ class EditableTable extends Component {
 
                                 {columnsData.map((eachName,indexTr) => (
                                     <td key={`${indexTr}-tde`}>
-                                    
+
                                         {(eachName.columnType === "multiSelect") ? (
                                             <select
                                                 id = "multiSelectOpt"
@@ -94,9 +88,8 @@ class EditableTable extends Component {
                                                 onChange={event => this.handleChange(index, eachName.columnName, event.target.value)}
                                             >
                                                 {eachName.multiSelectValue.map(eachValue => (
-                                                    <option 
+                                                    <option
                                                         value={eachValue} 
-                                                        onClick={this.onClickMultiSelect(eachValue)}
                                                         defaultValue={eachName.multiSelectValue[0]}
                                                     >{eachValue}</option>
                                                 ))}
