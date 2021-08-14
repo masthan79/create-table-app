@@ -33,7 +33,8 @@ class ColumnCreation extends Component {
         let {fromData} = this.state;
         if (field === "multiSelectValue") {
             const inputStr = event.target.value;
-            const inputStrArr = inputStr.split(",");
+            let inputStrArr = [""]
+            inputStrArr = [...inputStrArr,...inputStr.split(",")];
             fromData[i][field] = inputStrArr.map(eachItem => eachItem.trim())
         } else {
             fromData[i][field] = event.target.value;
