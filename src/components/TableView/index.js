@@ -16,9 +16,9 @@ class TableView extends Component {
         
         return (
             <>
-                {tableBody.map(eachRow => (
-                    <tr>
-                        {eachRow.map((cell, index) => <td key={index}>{cell}</td>)}
+                {tableBody.map((eachRow,index) => (
+                    <tr key={`${index}-trbv`}>
+                        {eachRow.map((cell, index) => <td key={`${index}-tdv`}>{cell}</td>)}
                     </tr>
                 ))}
             </>
@@ -35,8 +35,8 @@ class TableView extends Component {
 
         // const headers = Object.keys(tableData[0]);
         return (
-            <tr>
-                {header_arr.map(head => <th>{head}</th>)}
+            <tr key="trhv">
+                {header_arr.map((head, index) => <th key={`${index}-thv`}>{head}</th>)}
             </tr>
         );
     }

@@ -85,7 +85,7 @@ class ColumnCreation extends Component {
                                         <option value="date">Date</option>
                                         <option value="number">Number</option>
                                         <option value="multiSelect">Multi Select</option>
-                                    </select>
+                                </select>
                                 {(element.columnType === "multiSelect") && this.multiSelectValueInput(element, index)}
                             </div>
                         ))

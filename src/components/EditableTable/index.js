@@ -62,36 +62,59 @@ class EditableTable extends Component {
         )
     }
 
+    onClickMultiSelect = (eachValue) => {
+        console.log(eachValue);
+    }
+
     render(){
         // const columnsData = JSON.parse(localStorage.getItem("columnsData"))
         const {columnsData} = this.props;
         return (
             <div className="editable-table">
-            <table className="table">
-                <thead>
-                    <tr className="rows">
-                        {columnsData.map((eachData, index) => (
-                            <th key={index}>{eachData.columnName}</th>
-                        ))}
-                    </tr>
-                </thead>
-                <tbody>
-                    {this.state.tableData.map((eachData, index) => (
-                        <tr className="header-row">
-                            {columnsData.map((eachName) => (
-                                <td>
-                                <input 
-                                className = "cell"
-                                type={eachName.columnType} 
-                                onClick = {this.onClickCell}
-                                onChange={e => this.handleChange(index, eachName.columnName, e.target.value, eachName.columnType)}
-                                />
-                                </td>
+                <table className="table">
+                    <thead>
+                        <tr className="rows" key="trhe">
+                            {columnsData.map((eachData, index) => (
+                                <th key={`${index}-the`}>{eachData.columnName}</th>
                             ))}
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {this.state.tableData.map((eachData, index) => (
+                            <tr className="header-row" key={`${index}-trbe`}>
+
+                                {columnsData.map((eachName,indexTr) => (
+                                    <td key={`${indexTr}-tde`}>
+                                    
+                                        {(eachName.columnType === "multiSelect") ? (
+                                            <select
+                                                id = "multiSelectOpt"
+                                                className = "cell"
+                                                onClick = {this.onClickCell}
+                                                onChange={event => this.handleChange(index, eachName.columnName, event.target.value)}
+                                            >
+                                                {eachName.multiSelectValue.map(eachValue => (
+                                                    <option 
+                                                        value={eachValue} 
+                                                        onClick={this.onClickMultiSelect(eachValue)}
+                                                        defaultValue={eachName.multiSelectValue[0]}
+                                                    >{eachValue}</option>
+                                                ))}
+                                            </select>
+                                        ) : (
+                                            <input 
+                                                className = "cell"
+                                                type={eachName.columnType} 
+                                                onClick = {this.onClickCell}
+                                                onChange={event => this.handleChange(index, eachName.columnName, event.target.value)}
+                                            />
+                                        )}
+                                    </td>
+                                ))}
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
 
                 <div className="btn-container-edit">
                     <button type="button" onClick={this.onClickAddRow} className="btn">Add Row</button>
